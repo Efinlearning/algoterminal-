@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generate Auth Code</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100">
+    <div class="min-h-screen flex items-center justify-center">
+        <div class="bg-white p-8 rounded-lg shadow-lg w-full max-w-md">
+            <h1 class="text-2xl font-bold text-gray-800 mb-4">Generate Auth Code</h1>
+            <p class="text-gray-600 mb-6">Enter your broker credentials to generate the authentication code.</p>
+            
+            <form action="{{ url_for('broker.generate_auth_code') }}" method="POST" class="space-y-4">
+                <!-- Client ID Input -->
+                <div>
+                    <label for="client_id" class="block text-sm font-medium text-gray-700">Client ID</label>
+                    <input type="text" id="client_id" name="client_id" 
+                           class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500" 
+                           placeholder="Enter your Client ID" required>
+                </div>
+
+                <!-- Secret Key Input -->
+                <div>
+                    <label for="secret_key" class="block text-sm font-medium text-gray-700">Secret Key</label>
+                    <input type="password" id="secret_key" name="secret_key" 
+                           class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500" 
+                           placeholder="Enter your Secret Key" required>
+                </div>
+
+                <!-- Submit Button -->
+                <div>
+                    <button type="submit" 
+                            class="w-full bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        Generate Auth Code
+                    </button>
+                </div>
+            </form>
+
+            <!-- Back to Dashboard Button -->
+            <div class="mt-4 text-center">
+                <a href="{{ url_for('dashboard.dashboard') }}" class="text-blue-600 hover:underline">Back to Dashboard</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
