@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100">
+    <div class="container mx-auto mt-10">
+        <h2 class="text-3xl font-bold mb-4">Welcome to the Dashboard</h2>
+        <div class="mb-4">
+            <a href="{{ url_for('option_chain') }}" class="bg-blue-500 text-white py-2 px-4 rounded">View Live Option Chain</a>
+        </div>
+        <div>
+            <a href="{{ url_for('logout') }}" class="text-red-500">Logout</a>
+        </div>
+    </div>
+</body>
+</html>
