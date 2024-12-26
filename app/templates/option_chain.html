@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Option Chain</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100">
+    <div class="container mx-auto mt-10">
+        <h2 class="text-3xl font-bold mb-4">Live Option Chain</h2>
+        <table class="min-w-full table-auto border-collapse border border-gray-300">
+            <thead>
+                <tr>
+                    <th class="border px-4 py-2">Strike Price</th>
+                    <th class="border px-4 py-2">Call Price</th>
+                    <th class="border px-4 py-2">Put Price</th>
+                    <th class="border px-4 py-2">Volume</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for option in option_data %}
+                <tr>
+                    <td class="border px-4 py-2">{{ option.strike_price }}</td>
+                    <td class="border px-4 py-2">{{ option.call_price }}</td>
+                    <td class="border px-4 py-2">{{ option.put_price }}</td>
+                    <td class="border px-4 py-2">{{ option.volume }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+                      </html>
